@@ -1,0 +1,57 @@
+version: "3"
+services:
+  big-boss:
+    container_name: big-boss
+    build:
+      context: .
+      dockerfile: DockerfileBigBoss
+    networks:
+      agent-network:
+    tty: true
+    stdin_open: true
+  agent-tom:
+    build:
+      context: .
+      dockerfile: DockerfileAgent
+      args:
+        templateLogsPath: templateLogs/logs-agent-tom.log
+    container_name: agent-tom
+    networks:
+      - agent-network
+    tty: true
+    stdin_open: true
+  agent-croft:
+    build:
+      context: .
+      dockerfile: DockerfileAgent
+      args:
+        templateLogsPath: templateLogs/logs-agent-croft.log
+    container_name: agent-croft
+    networks:
+      - agent-network
+    tty: true
+    stdin_open: true
+  agent-007:
+    build:
+      context: .
+      dockerfile: DockerfileAgent
+      args:
+        templateLogsPath: templateLogs/logs-agent-007.log
+    container_name:  agent-007
+    networks:
+      - agent-network
+    tty: true
+    stdin_open: true
+  agent-blue:
+    build:
+      context: .
+      dockerfile: DockerfileAgent
+      args:
+        templateLogsPath: templateLogs/logs-agent-blue.log
+    container_name: agent-blue
+    networks:
+      - agent-network
+    tty: true
+    stdin_open: true
+networks:
+  agent-network:

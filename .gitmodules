@@ -1,0 +1,3 @@
+[submodule "bilberry"]
+	path = bilberry
+	url = https://github.com/jbebar/bilberry.git
