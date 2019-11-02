@@ -4,7 +4,7 @@ services:
     container_name: big-boss
     build:
       context: .
-      dockerfile: DockerfileBigBoss
+      dockerfile: DockerFileBigBoss
     networks:
       agent-network:
     tty: true
@@ -12,7 +12,7 @@ services:
   agent-tom:
     build:
       context: .
-      dockerfile: DockerfileAgent
+      dockerfile: DockerFileAgent
       args:
         templateLogsPath: templateLogs/logs-agent-tom.log
     container_name: agent-tom
@@ -23,7 +23,7 @@ services:
   agent-croft:
     build:
       context: .
-      dockerfile: DockerfileAgent
+      dockerfile: DockerFileAgent
       args:
         templateLogsPath: templateLogs/logs-agent-croft.log
     container_name: agent-croft
@@ -34,7 +34,7 @@ services:
   agent-007:
     build:
       context: .
-      dockerfile: DockerfileAgent
+      dockerfile: DockerFileAgent
       args:
         templateLogsPath: templateLogs/logs-agent-007.log
     container_name:  agent-007
@@ -45,7 +45,7 @@ services:
   agent-blue:
     build:
       context: .
-      dockerfile: DockerfileAgent
+      dockerfile: DockerFileAgent
       args:
         templateLogsPath: templateLogs/logs-agent-blue.log
     container_name: agent-blue

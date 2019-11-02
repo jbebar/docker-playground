@@ -1,5 +1,0 @@
-FROM agent:latest
-ARG templateLogsPath
-COPY $templateLogsPath agentTemplate.log
-COPY Agent .
-CMD ./start.sh 0
